@@ -1,8 +1,8 @@
-RELEASE_BRANCH = 1-19
-VERSION := v$(subst -,.,$(RELEASE_BRANCH)).6
+RELEASE_BRANCH = 1-20
+VERSION := v$(subst -,.,$(RELEASE_BRANCH)).4
 SOURCE_URL = https://distro.eks.amazonaws.com/kubernetes-${RELEASE_BRANCH}/releases/1/artifacts/kubernetes/${VERSION}/kubernetes-src.tar.gz
 GIT_SHA := $(shell echo `git rev-parse --verify HEAD^{commit}`)
-IMAGE_NAME = ghcr.io/kbst/kind-eks-d
+IMAGE_NAME = public.ecr.aws/jicowan/kind-eks-d
 TEST_IMAGE = ${IMAGE_NAME}:${GIT_SHA}
 
 default: update-src build-image test-image
