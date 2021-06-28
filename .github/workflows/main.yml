@@ -22,8 +22,8 @@ jobs:
     - name: Docker login
       uses: docker/login-action@v1
       with:
-        registry: ghcr.io
-        username: kbstci
+        registry: public.ecr.aws
+        username: AWS
         password: ${{ secrets.DOCKER_AUTH }}
 
     - name: Build image
